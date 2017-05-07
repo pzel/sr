@@ -1,6 +1,13 @@
 module Lib
-    ( someFunc
+    ( Game(..)
+    , InputEvent(..)
+    , draw
+    , update
     ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "hello"
+data Game = Game Integer deriving (Eq,Ord,Show)
+data InputEvent = MoveLeft | MoveRight
+
+draw (Game i) = show i
+update (Game i) MoveRight = Game (i+1)
+update (Game i) MoveLeft = Game (i-1)
