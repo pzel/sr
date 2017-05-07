@@ -7,7 +7,7 @@ import System.CPUTime (getCPUTime)
 import System.IO
 
 main :: IO ()
-main = setupTerm >> gameLoop (Game 0)
+main = setupTerm >> gameLoop freshGame
 
 gameLoop :: Game -> IO ()
 gameLoop g = do
