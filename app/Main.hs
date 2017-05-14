@@ -1,5 +1,4 @@
 module Main where
-
 --import Control.Concurrent (threadDelay)
 import Data.Char (chr)
 import Lib
@@ -12,7 +11,8 @@ main = setupTerm >> gameLoop freshGame
 gameLoop :: Game -> IO ()
 gameLoop g = do
   clearTerm
-  putStrLn (draw g)
+  putStr (draw g)
+  hFlush stdout
   i <- waitForInput
   gameLoop (update g i)
 
@@ -30,6 +30,6 @@ waitForInput :: IO InputEvent
 waitForInput = do
   userInput <- getChar
   case userInput of
-    'l' -> return MoveRight
-    'h' -> return MoveLeft
+    'l' -> return CmdMoveRight
+    'h' -> return CmdMoveLeft
     _ -> waitForInput
