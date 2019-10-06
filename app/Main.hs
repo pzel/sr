@@ -32,4 +32,6 @@ waitForInput = do
   case userInput of
     'l' -> return CmdMoveRight
     'h' -> return CmdMoveLeft
+    'q' -> return CmdQuit
+    '1' -> return CmdSwitchWeapon
     _ -> waitForInput

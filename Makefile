@@ -1,8 +1,8 @@
 .PHONY: all ghci play test
 STACK := stack --verbosity warn
-TERM := xfce4-terminal --geometry=95x2 \
+TERM := xfce4-terminal --geometry=95x10 \
 --hide-menubar --hide-toolbar --hide-scrollbar \
---hide-borders -T 'Space Rats'
+-T 'Space Rats'
 
 play:
 	@$(STACK) build
